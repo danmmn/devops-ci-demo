@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ci-demo-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ci‑demo
+  template:
+    metadata:
+      labels:
+        app: ci‑demo
+    spec:
+      containers:
+      - name: ci‑demo
+        # 替换为你的dockerhub用户名/镜像名
+        image: 你的dockerhub用户名/ci‑demo:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ci‑demo‑svc
+spec:
+  type: NodePort
+  selector:
+    app: ci‑demo
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30080
