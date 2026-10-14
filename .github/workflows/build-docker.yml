@@ -27,4 +27,4 @@ jobs:
           context: .
           push: true
           # 镜像名称：你的dockerhub用户名/ci‑demo:latest
-          tags: 你的dockerhub用户名/ci‑demo:latest
+          tags: xhyyy0212/ci‑demo:latest
