@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GitOps微服务Demo</title>
+</head>
+<body>
+    <h1>DevOps GitOps Project Demo</h1>
+    <div id="result"></div>
+    <script>
+        fetch("/api/").then(r=>r.text()).then(data=>{
+            document.getElementById("result").innerText=data;
+        })
+    </script>
+</body>
+</html>
